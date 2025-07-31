@@ -1,12 +1,12 @@
 public class Main {
     public static void main(String[] args) {
-        AvionPrivado privado = new AvionPrivado("A1", 1000, 3, "nuevo", "Juan Pérez", "estadounidense");
-        AvionMercaderia mercaderia = new AvionMercaderia("B1", 1500, 2, "usado", 1.5);
-        AvionPasajeros pasajeros = new AvionPasajeros("C1", 20000, 2.5, "usado", 150, 100);
+        AvionPrivado avionPrivado = AvionFactory.crearAvionPrivado("A1", 1000, 3, "nuevo", "Juan Pérez", "estadounidense");
+        AvionMercaderia avionMercaderia = AvionFactory.crearAvionMercaderia("B1", 1500, 2, "usado", 1.5);
+        AvionPasajeros avionPasajeros = AvionFactory.crearAvionPasajeros("C1", 20000, 2.5, "usado", 150, 100);
 
-        double costoPrivado = privado.calcularCostoOperacion();
-        double costoMercaderia = mercaderia.calcularCostoOperacion();
-        double costoPasajeros = pasajeros.calcularCostoOperacion();
+        double costoPrivado = avionPrivado.calcularCostoOperacion();
+        double costoMercaderia = avionMercaderia.calcularCostoOperacion();
+        double costoPasajeros = avionPasajeros.calcularCostoOperacion();
 
         System.out.println("Costo operación privado: $" + costoPrivado);
         System.out.println("Costo operación mercadería: $" + costoMercaderia);
