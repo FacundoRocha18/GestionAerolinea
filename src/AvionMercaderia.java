@@ -9,13 +9,15 @@ public class AvionMercaderia extends Avion {
         this.costoAlmacenamiento = costoAlmacenamiento;
     }
 
-    // Método que implementa polimorfismo
+    // Mï¿½todo que implementa polimorfismo
+    @Override
     public double calcularCostoOperacion() {
         double costo = peso * aceleracion - (peso * costoAlmacenamiento);
-        if (condicion.equalsIgnoreCase("nuevo")) {
-            return costo;
-        } else {
-            return costo * 1.10; // 10% mantenimiento
-        }
+
+        boolean esNuevo = this.condicion.equalsIgnoreCase("nuevo");
+
+        if (!esNuevo) return costo * 1.10; // No es nuevo, +10% mantenimiento
+
+        return costo;
     }
 }
