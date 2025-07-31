@@ -3,8 +3,13 @@ public class AvionMercaderia extends Avion {
     private double costoAlmacenamiento;
 
     // Constructor (concepto: constructores)
-    public AvionMercaderia(String matricula, double peso, double aceleracion, 
-                           String condicion, double costoAlmacenamiento) {
+    public AvionMercaderia(
+            String matricula,
+            double peso,
+            double aceleracion,
+            String condicion,
+            double costoAlmacenamiento
+    ) {
         super(matricula, peso, aceleracion, condicion);
         this.costoAlmacenamiento = costoAlmacenamiento;
     }

@@ -4,8 +4,14 @@ public class AvionPrivado extends Avion {
     private String nacionalidad;
 
     // Constructor (concepto: constructores)
-    public AvionPrivado(String matricula, double peso, double aceleracion,
-                        String condicion, String nombrePropietario, String nacionalidad) {
+    public AvionPrivado(
+            String matricula,
+            double peso,
+            double aceleracion,
+            String condicion,
+            String nombrePropietario,
+            String nacionalidad
+    ) {
         super(matricula, peso, aceleracion, condicion);
 
         this.nombrePropietario = nombrePropietario;
@@ -20,7 +26,8 @@ public class AvionPrivado extends Avion {
         boolean esEstadounidense = nacionalidad.equalsIgnoreCase("Estadounidense");
         boolean esNuevo = condicion.equalsIgnoreCase("nuevo");
 
-        if (!esEstadounidense) return costo * 1.20; // No estadounidense y es usado, +10% por impuestos y 10% por mantenimiento
+        if (!esEstadounidense)
+            return costo * 1.20; // No estadounidense y es usado, +10% por impuestos y 10% por mantenimiento
 
         if (!esNuevo) return costo * 1.10;          // Es estadounidense, pero usado +10% por mantenimiento
 
